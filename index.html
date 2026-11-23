@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PIXEL FORGE — Game Studio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="background-grid"></div>
+
+    <header class="header">
+        <a href="#" class="logo" onclick="showHome()">
+            <span>◆</span> PIXEL FORGE
+        </a>
+        <div class="studio-label">GAME DEVELOPMENT STUDIO</div>
+    </header>
+
+    <main>
+
+        <section id="home" class="page active">
+            <div class="hero">
+                <div class="small-label">
+                    <span class="status-dot"></span>
+                    INDEPENDENT GAME STUDIO
+                </div>
+
+                <h1>PIXEL <span>FORGE</span></h1>
+                <div class="subtitle">WE CREATE WORLDS</div>
+
+                <p class="description">
+                    Создаём игры. Строим новые миры.
+                    Открываем новые возможности.
+                </p>
+
+                <div class="platform-buttons">
+                    <button class="platform pc" onclick="openPlatform('pc')">
+                        <span class="platform-icon">▣</span>
+                        <span class="platform-title">ИГРЫ ДЛЯ ПК</span>
+                        <span class="platform-info">DESKTOP GAMES →</span>
+                    </button>
+
+                    <button class="platform mobile" onclick="openPlatform('mobile')">
+                        <span class="platform-icon">▯</span>
+                        <span class="platform-title">ИГРЫ ДЛЯ ТЕЛЕФОНОВ</span>
+                        <span class="platform-info">MOBILE GAMES →</span>
+                    </button>
+                </div>
+
+                <div class="bottom-text">
+                    PIXEL FORGE © 2026 // ALL SYSTEMS ONLINE
+                </div>
+            </div>
+        </section>
+
+        <section id="catalog" class="page">
+            <div class="catalog-top">
+                <button class="back-button" onclick="showHome()">← ГЛАВНАЯ</button>
+                <div class="small-label">PIXEL FORGE / GAME LIBRARY</div>
+            </div>
+
+            <div class="catalog-heading">
+                <h2 id="catalogTitle">ИГРЫ ДЛЯ ТЕЛЕФОНОВ</h2>
+                <p id="catalogDescription">Игры нашей студии</p>
+            </div>
+
+            <div id="gamesGrid" class="games-grid"></div>
+            <div class="bottom-text">PIXEL FORGE © 2026</div>
+        </section>
+
+        <section id="gamePage" class="page">
+            <div class="game-page-top">
+                <button class="back-button" onclick="backToCatalog()">
+                    ← НАЗАД К ИГРАМ
+                </button>
+                <div class="small-label">PIXEL FORGE / GAME DETAILS</div>
+            </div>
+
+            <div class="game-detail">
+                <div class="game-cover">
+                    <img id="detailCover" src="mondo-cover.jpg" alt="MONDO">
+                </div>
+
+                <div class="game-information">
+                    <div class="game-category" id="detailCategory">MOBILE GAME / RPG</div>
+                    <h1 id="detailName">MONDO</h1>
+
+                    <p class="game-short-description" id="detailDescription"></p>
+
+                    <div class="game-tags"></div>
+
+                    <div class="game-download-area">
+                        <div class="download-info">
+                            <span>ДОСТУПНЫЕ ВЕРСИИ</span>
+                            <span class="available-status">● ДОСТУПНО</span>
+                        </div>
+
+                        <button class="download-main" onclick="toggleVersions()">
+                            <span>СКАЧАТЬ ИГРУ</span>
+                            <span>↓</span>
+                        </button>
+
+                        <div class="versions-panel" id="versionsPanel" hidden>
+                            <div class="versions-title">ВЫБЕРИТЕ ВЕРСИЮ</div>
+                            <div id="versionsList"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-game">
+                <div class="section-label">ABOUT THE GAME</div>
+                <h2>ОБ ИГРЕ</h2>
+                <p id="detailFullDescription"></p>
+            </div>
+
+            <!-- ГАЛЕРЕЯ СКРИНШОТОВ -->
+
+            <div class="screenshots-section">
+                <div class="section-label">GAME SCREENSHOTS</div>
+                <h2>СКРИНШОТЫ ИГРЫ</h2>
+                <p class="gallery-description">
+                    Посмотрите, что вас ждёт внутри MONDO.
+                </p>
+
+                <div class="screenshots-grid" id="screenshotsGrid"></div>
+            </div>
+
+            <!-- ПРОСМОТР ИЗОБРАЖЕНИЯ -->
+
+            <div class="image-viewer" id="imageViewer" onclick="closeViewer()">
+                <button class="viewer-close" onclick="closeViewer()">×</button>
+                <img id="viewerImage" src="" alt="Скриншот MONDO">
+            </div>
+
+            <div class="bottom-text">PIXEL FORGE © 2026</div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
